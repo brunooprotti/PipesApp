@@ -1,0 +1,31 @@
+<div class="text-layout">
+  <h1>Decimal Pipe y Porcentaje</h1>
+  <p>
+    Pipes incluidos en Angular - Usualmente en el Common Module.
+  </p>
+</div>
+
+<div class="p-grid">
+  <div class="p-col-4">
+    <p-card header="Ventas Netas"
+            subheader="del presente año">
+      {{ventasNetas | number:'1.2-2'}} <!--el 1 es para que te imprima toda la parte entera, si le ponemos 0 no la imprime y el 2-2 es para que imprima y redondee 2 decimales.-->
+    </p-card>
+  </div>
+  <div class="p-col-4">
+    <p-card header="Ventas Brutas"
+            subheader="del presente año">
+      {{ventasNetas + 2000000 | currency:'CAD':'symbol-narrow':'1.0-4' }} <!--1er parametro le ponemos el TIPO que sea necesario USD CAD, etc.
+                                                                              2do Symbol-narrow para que el parametro tome el valor anterior y ponga el signo correspondiente.
+                                                                              3ro la cantidad de decimales que queremos, en este caso todos los enteros y de 0 a 4 decimales. -->
+    </p-card>
+  </div>
+  <div class="p-col-4">
+    <p-card header="Ganancia Porcentual"
+            subheader="del presente año">
+      {{ porcentaje | percent:'2.2-2' }} <!--1er parametro le ponemos el TIPO que sea necesario USD CAD, etc.
+                                                                              2do Symbol-narrow para que el parametro tome el valor anterior y ponga el signo correspondiente.
+                                                                              3ro la cantidad de decimales que queremos, en este caso todos los enteros y de 0 a 4 decimales. -->
+    </p-card>
+  </div>
+</div>
